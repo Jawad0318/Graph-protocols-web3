@@ -33,9 +33,22 @@ function App() {
   }, []);
   return (
     <>
-      <div></div>
+      <div>
+        Tokens Information
+        {tokens !== null &&
+          tokens.length > 0 &&
+          tokens.map((token, i) => {
+            return (
+              <div key={i}>
+                <div>{token.id}</div>
+                <div>{token.name}</div>
+                <div>{token.symbol}</div>
+                <div>{token.__typename}</div>
+              </div>
+            );
+          })}
+      </div>
     </>
   );
 }
-
 export default App;
